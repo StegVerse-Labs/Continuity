@@ -6,14 +6,21 @@ on:
 jobs:
   kick:
     runs-on: ubuntu-latest
+
     steps:
       - name: Resolve token
         id: token
         run: |
-          if [ -n "${{ secrets.GH_STEGVERSE_PAT }}" ]; then
+          # Prefer the classic PAT in PAT_WORKFLOW
+          if [ -n "${{ secrets.PAT_WORKFLOW }}" ]; then
+            echo "Using PAT_WORKFLOW"
+            echo "token=${{ secrets.PAT_WORKFLOW }}" >> $GITHUB_OUTPUT
+          elif [ -n "${{ secrets.GH_STEGVERSE_PAT }}" ]; then
+            # Optional fallback, but PAT_WORKFLOW is the main one
+            echo "Using GH_STEGVERSE_PAT"
             echo "token=${{ secrets.GH_STEGVERSE_PAT }}" >> $GITHUB_OUTPUT
           else
-            echo "ERROR: Missing GH_STEGVERSE_PAT secret"
+            echo "ERROR: Neither PAT_WORKFLOW nor GH_STEGVERSE_PAT is set"
             exit 1
           fi
 
