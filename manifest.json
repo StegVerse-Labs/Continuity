@@ -1,0 +1,58 @@
+{
+  "version": "v2-omega-bootstrap-0.1",
+  "create": [
+    {
+      "path": "README.md",
+      "template": "doc.md.tmpl",
+      "vars": {
+        "TITLE": "StegVerse Continuity v2 — OMEGA",
+        "BODY": "This repo begins as a seed. Run Actions → Bootstrap: Expand Continuity v2-OMEGA to generate the full structure."
+      }
+    },
+    {
+      "path": "docs/CONCEPT.md",
+      "template": "doc.md.tmpl",
+      "vars": {
+        "TITLE": "Continuity v2-OMEGA — Concept",
+        "BODY": "Continuity v2 introduces autonomous lanes, entity governance, drift detection, and legacy preservation."
+      }
+    }
+  ],
+
+  "lanes": [
+    {
+      "file": "docs/tasks/lanes/01_zero_ghost.md",
+      "title": "Zero-Ghost Token Model rollout",
+      "bullets": ["Detect long-lived tokens", "Draft StegTV policy", "Add drift alarms", "Define safe rotation"]
+    },
+    {
+      "file": "docs/tasks/lanes/02_scw_mesh.md",
+      "title": "SCW Mesh Expansion",
+      "bullets": ["Seed SCW workflows", "Repair broken workflows", "Normalize repo docs"]
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "GhostWatch",
+      "role": "Detect ghost credentials",
+      "scopes": ["read:org","read:repo"],
+      "outputs": ["docs/state/ghost_findings.md"]
+    },
+    {
+      "id": "ContinuityNode",
+      "role": "Maintain STATUS.md",
+      "scopes": ["read:repo","write:repo"],
+      "outputs": ["docs/STATUS.md"]
+    }
+  ],
+
+  "workflows": [
+    {
+      "name": "SCE: Snapshot",
+      "path": ".github/workflows/sce_snapshot.yml",
+      "command": "echo snapshot",
+      "commit_msg": "chore: snapshot"
+    }
+  ]
+}
