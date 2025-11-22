@@ -10,7 +10,8 @@ on:
 
 permissions:
   contents: write
-
+  workflows: write
+  
 jobs:
   expand:
     runs-on: ubuntu-latest
