@@ -46,3 +46,46 @@ Initialize the repo with the seed v2 files (the ones you're currently uploading)
 
 ### **Step 2 — Import v1 Files**
 Place all historical continuity content into:
+
+/docs/legacy/
+
+Each import folder must include:
+
+- `README` summarizing the import
+- All v1 content as-is
+
+### **Step 3 — Add v2 Expansion Tools**
+The v2 bootstrap or OMEGA expansion can generate:
+
+- task lanes  
+- workflows  
+- entity definitions  
+- diagrams  
+- status files  
+- and more  
+
+This turns v2 into a living engine.
+
+### **Step 4 — Run Drift Detection (Optional)**
+Actions such as `sce_drift_scan` or `sce_snapshot` can validate repo health,
+naming consistency, and cross-repo coherence.
+
+### **Step 5 — Begin Using v2 as the Active Layer**
+From this point on:
+
+- All new updates go into `docs/*`, not legacy.
+- All workflows operate under v2 rules.
+- v1 serves as an immutable historical record.
+
+---
+
+## Outcome of Migration
+
+After migration:
+
+- v1 is frozen and safely preserved.  
+- v2 becomes fully operational.  
+- The StegVerse continuity layer supports autonomous growth, parallel tasks,
+  and multi-repo awareness.
+
+This file explains the correct and safe process for transitioning from v1 → v2.
